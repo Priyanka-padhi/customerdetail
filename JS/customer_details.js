@@ -100,8 +100,21 @@ function validateForm(event){
  document.getElementById("suggErr").innerHTML = "Please fill your Suggestion";  //11
  }
 
+//checking for radio buttons
 
+var radios = document.getElementsByName("gender");
+    var formValid = false;
 
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid)  {
+    document.getElementById("genderErr").innerHTML 
+           = "Please select any of the given options"; 
+  }
 }
 
 
